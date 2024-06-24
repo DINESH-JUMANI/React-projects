@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# sh ./scripts/react_tailwind_setup.sh <directory_name>
+
 # Check if directory name is provided
 if [ -z "$1" ]; then
   echo "Usage: $0 <directory_name>"
