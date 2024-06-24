@@ -18,12 +18,43 @@ npm install -D tailwindcss postcss autoprefixer
 # Initialize tailwindcss with a postcss configuration
 npx tailwindcss init -p
 
-# Replace content array in tailwind.config.js
-sed -i '' 's/content: \[\]/content: ["\.\/index\.html", "\.\/src\/\*\*\/\*\.{js,ts,jsx,tsx}"]/' tailwind.config.js
+# Clear the content of tailwind.config.js and add the new content
+cat > tailwind.config.js <<EOL
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+EOL
 
 # Clear /src/index.css and add the tailwind directives
 echo '@tailwind base;' > src/index.css
 echo '@tailwind components;' >> src/index.css
 echo '@tailwind utilities;' >> src/index.css
 
+# Clear the content of ./src/App.jsx and add the new content
+cat > src/App.jsx <<EOL
+import { useState } from 'react'
+
+function App() {
+  return (
+    <>
+      <div></div>
+    </>
+  )
+}
+
+export default App
+EOL
+
 echo "Tailwind CSS setup is complete."
+
+cd "$1"
+
+npm run dev
