@@ -55,6 +55,3 @@ EOL
 
 echo "Tailwind CSS setup is complete."
 
-cd "$1"
-
-npm run dev
