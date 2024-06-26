@@ -26,7 +26,7 @@ rm -rf public/*
 rm -rf src/assets/*
 
 # Clear the content of src/App.jsx
-echo '' > src/App.jsx
+echo 'rfce' > src/App.jsx
 
 # Clear the content of src/index.css
 echo '' > src/index.css
