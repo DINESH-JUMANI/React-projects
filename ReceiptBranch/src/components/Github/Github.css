@@ -1,0 +1,14 @@
+.github-container {
+    text-align: center;
+    margin: 1rem;
+    background-color: #4b5563;
+    color: #ffffff;
+    padding: 1rem;
+    font-size: 1.875rem;
+    border-radius: 0.5rem;
+}
+
+.github-avatar {
+    width: 300px;
+    margin-top: 1rem;
+}
